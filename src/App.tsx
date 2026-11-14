@@ -222,7 +222,7 @@ function App() {
           )}
 
           {data && (
-            <>
+            <div className={cn("space-y-4 transition-opacity", loading && "opacity-50 pointer-events-none")} aria-busy={loading}>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 {totales.length ? totales.map(t => (
                   <div key={t.moneda} className="border border-slate-200 rounded-xl bg-white p-4">
@@ -265,7 +265,7 @@ function App() {
                 {!!data.omitidos?.duplicados_respaldados && ` ${data.omitidos.duplicados_respaldados} tiempo(s) respaldados en Books se muestran una sola vez, con su tarifa real.`}
                 {' '}El ícono <span className="text-amber-600">ⓘ</span> marca tiempos históricos de Books valuados con la tarifa plana del proyecto.
               </p>
-            </>
+            </div>
           )}
         </div>
         <p className="mt-4 text-[11px] text-slate-500 relative z-10">Solo consulta: desde aquí no se escribe en Aptus ni en Books.</p>
