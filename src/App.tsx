@@ -15,6 +15,7 @@ import {
   alternarTipo, buildTree, edadCache, filterRows, FILTROS_INICIALES, flatten, formatHoras, formatMoney, getWip, responsablesDe, sumTotals, TIPO_PLURAL, TIPOS, toCsv,
   validateFiltros, type Filtros, type Tipo, type Vista, type WipResponse,
 } from '@/lib/wip'
+import { MenuButton } from '@/components/MenuButton'
 
 type Modal = { isOpen: boolean; type: StatusModalType; title: string; message: string }
 const REINTENTO_MS = 4000
@@ -145,6 +146,7 @@ function App() {
               <div className="flex items-center gap-3">
                 <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Trabajo en proceso (WIP)</h1>
                 <ThemeMenu theme={theme} setTheme={setTheme} />
+                <MenuButton />
               </div>
               <p className="text-slate-500 text-sm mt-0.5">Tiempos, gastos y honorarios fijos por responsable, cliente y proyecto</p>
             </div>
